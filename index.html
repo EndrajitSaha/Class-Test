@@ -21,26 +21,50 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- link FavIcon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        transition: all 0.5 ease-in;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .first-nav {
+        display: flex;
+        justify-content: space-between;
+      }
+      .second-nav {
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        z-index: 1;
+      }
+      .order {
+        background-color: brown;
+        color: white;
+      }
+      .order button {
+        padding: 10px;
+      }
+    </style>
 
     <title>Website</title>
   </head>
   <body>
     <header>
       <!-- first navbar -->
-      <nav class="d-flex justify-content-between sticky-top">
+      <nav class="first-nav">
         <img src="/logo.png" alt="" height="70px" />
         <i class="fa-solid fa-cart-shopping fa-2x p-3"></i>
       </nav>
       <!-- second navbar -->
-      <nav class="d-flex bg-warning py-2 justify-content-between">
+      <nav class="second-nav d-flex bg-warning py-3 justify-content-between">
         <div>
-          <a href="#" class="text-decoration-none text-black-50 px-5">Order</a>
-          <a href="#" class="text-decoration-none text-black-50 px-5">Review</a>
-          <a href="#" class="text-decoration-none text-black-50 px-5"
-            >Contact</a
-          >
+          <a href="#" class="px-5">Order</a>
+          <a href="#" class="px-5">Review</a>
+          <a href="#" class="px-5">Contact</a>
         </div>
         <div class="pe-3">
           <i class="fa-solid fa-user"></i>
@@ -50,7 +74,7 @@
     </header>
     <!-- body section -->
     <main>
-      <div class="container bg-warning mx-auto w-100vw">
+      <div class="container py-3 ">
         <img src="/banner-img.png" alt="" width="1000vw" />
       </div>
 
@@ -63,72 +87,47 @@
           <img src="/biriyani_img.png" alt="" />
           <span class="p-3">Chicken Biriyani</span>
           <button class="btn btn-primary">+</button>
-          <span id="">1</span>
+          <span class="p-3">1</span>
           <button class="btn btn-primary">-</button>
         </div>
         <hr />
         <div>
           <img src="/firni_img.png" alt="" />
-          <span>Firni</span>
+          <span class="p-3">Firni</span>
           <button class="btn btn-primary">+</button>
-          <span>0</span>
+          <span class="p-3">0</span>
           <button class="btn btn-primary">-</button>
         </div>
         <hr />
         <div>
           <img src="/curry_img.png" alt="" />
-          <span>Chicken Curry</span>
+          <span class="p-3">Chicken Curry</span>
           <button class="btn btn-primary">+</button>
-          <span>0</span>
+          <span class="p-3">0</span>
           <button class="btn btn-primary">-</button>
         </div>
       </section>
 
       <!-- review section -->
-      <section>
+      <section class="p-3 bg-secondary text-center">
         <h2 class="text-center py-3 text-bolder">Reviews</h2>
         <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col bg-white p-2 rounded m-2">
               <img src="/chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
-            <div class="col">
+            <div class="col bg-white p-2 rounded m-2">
               <img src="/chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
-            <div class="col">
-              <img src="/chicken_curry.png" alt="" />
-              <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <img src="/chicken_curry.png" alt="" />
-              <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-            <div class="col">
-              <img src="/chicken_curry.png" alt="" />
-              <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-            <div class="col">
+            <div class="col bg-white p-2 rounded m-2">
               <img src="/chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
@@ -139,21 +138,46 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col bg-white p-2 rounded m-2">
               <img src="/chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
-            <div class="col">
+            <div class="col bg-white p-2 rounded m-2">
               <img src="/chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
-            <div class="col">
+            <div class="col bg-white p-2 rounded m-2">
+              <img src="/chicken_curry.png" alt="" />
+              <p>Chicken Curry</p>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col bg-white p-2 rounded m-2">
+              <img src="/chicken_curry.png" alt="" />
+              <p>Chicken Curry</p>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="col bg-white p-2 rounded m-2">
+              <img src="/chicken_curry.png" alt="" />
+              <p>Chicken Curry</p>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="col bg-white p-2 rounded m-2">
               <img src="/chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
@@ -165,7 +189,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="bg-danger p-5 text-white">
       <h4>Contact US</h4>
       <i class="fa-brands fa-facebook"></i>
       <i class="fa-brands fa-instagram"></i>
