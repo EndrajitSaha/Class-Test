@@ -26,10 +26,10 @@
         text-decoration: none;
         color: black;
         font-weight: 700;
-        transition: all 0.5 ease-in;
+        transition: all 0.3s linear;
       }
       a:hover {
-        text-decoration: underline;
+        transform: scale(1.3);
       }
       .first-nav {
         display: flex;
@@ -38,15 +38,30 @@
       .second-nav {
         display: flex;
         justify-content: space-between;
+        background-color: #ffc107;
         position: sticky;
+        padding: 10px;
         z-index: 1;
       }
       .order {
         background-color: brown;
         color: white;
+        padding: 2rem;
       }
       .order button {
         padding: 10px;
+      }
+      .main img {
+        width: max-content;
+      }
+      h2 {
+        font-weight: 700;
+      }
+      .review {
+        background-color: #f9cedd;
+      }
+      .btn {
+        background-color: white;
       }
     </style>
 
@@ -56,11 +71,11 @@
     <header>
       <!-- first navbar -->
       <nav class="first-nav">
-        <img src="/logo.png" alt="" height="70px" />
+        <img src="logo.png" alt="" height="70px" />
         <i class="fa-solid fa-cart-shopping fa-2x p-3"></i>
       </nav>
       <!-- second navbar -->
-      <nav class="second-nav d-flex bg-warning py-3 justify-content-between">
+      <nav class="second-nav">
         <div>
           <a href="#" class="px-5">Order</a>
           <a href="#" class="px-5">Review</a>
@@ -74,86 +89,61 @@
     </header>
     <!-- body section -->
     <main>
-      <div class="container py-3 ">
-        <img src="/banner-img.png" alt="" width="1000vw" />
+      <div class="main pb-3">
+        <img src="banner-img.png" alt="" width="1000vw" />
       </div>
 
       <!-- order section -->
-      <div>
+      <div class="order-div">
         <h2 class="text-center py-3 text-bolder">Order food</h2>
       </div>
-      <section class="order container justify-content-around">
+      <section class="order">
         <div>
-          <img src="/biriyani_img.png" alt="" />
+          <img src="biriyani_img.png" alt="" />
           <span class="p-3">Chicken Biriyani</span>
-          <button class="btn btn-primary">+</button>
+          <button class="btn">+</button>
           <span class="p-3">1</span>
-          <button class="btn btn-primary">-</button>
+          <button class="btn">-</button>
         </div>
         <hr />
         <div>
-          <img src="/firni_img.png" alt="" />
+          <img src="firni_img.png" alt="" />
           <span class="p-3">Firni</span>
-          <button class="btn btn-primary">+</button>
+          <button class="btn">+</button>
           <span class="p-3">0</span>
-          <button class="btn btn-primary">-</button>
+          <button class="btn">-</button>
         </div>
         <hr />
         <div>
-          <img src="/curry_img.png" alt="" />
+          <img src="curry_img.png" alt="" />
           <span class="p-3">Chicken Curry</span>
-          <button class="btn btn-primary">+</button>
+          <button class="btn">+</button>
           <span class="p-3">0</span>
-          <button class="btn btn-primary">-</button>
+          <button class="btn">-</button>
         </div>
       </section>
 
       <!-- review section -->
-      <section class="p-3 bg-secondary text-center">
+      <section class="review p-3 text-center">
         <h2 class="text-center py-3 text-bolder">Reviews</h2>
         <div class="container">
           <div class="row">
             <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
+              <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
+              <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
-              <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
-              <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-            <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
-              <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
-            </div>
-            <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
+              <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
@@ -164,21 +154,46 @@
         <div class="container">
           <div class="row">
             <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
+              <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
+              <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
-              <img src="/chicken_curry.png" alt="" />
+              <img src="chicken_curry.png" alt="" />
+              <p>Chicken Curry</p>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col bg-white p-2 rounded m-2">
+              <img src="chicken_curry.png" alt="" />
+              <p>Chicken Curry</p>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="col bg-white p-2 rounded m-2">
+              <img src="chicken_curry.png" alt="" />
+              <p>Chicken Curry</p>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="col bg-white p-2 rounded m-2">
+              <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
