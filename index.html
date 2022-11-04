@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link Css -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- link Fontawesome -->
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -14,140 +19,177 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- link framework -->
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <style>
-      a {
-        text-decoration: none;
-        color: black;
-        font-weight: 700;
-        transition: all 0.3s linear;
+      .navbar ul li a::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #f44336;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
       }
-      a:hover {
-        transform: scale(1.3);
-      }
-      .first-nav {
-        display: flex;
-        justify-content: space-between;
-      }
-      .second-nav {
-        display: flex;
-        justify-content: space-between;
-        background-color: #ffc107;
-        position: sticky;
-        padding: 10px;
-        z-index: 1;
-      }
-      .order {
-        background-color: brown;
-        color: white;
-        padding: 2rem;
-      }
-      .order button {
-        padding: 10px;
-      }
-      .main img {
-        width: 100vw;
+      .navbar ul li a:hover::after {
+        width: 100%;
       }
       h2 {
-        font-weight: 700;
+        animation: text 3s infinite;
       }
-      .review {
-        background-color: #f9cedd;
+      @keyframes text {
+        0% {
+          transform: scale(1);
+        }
+        20% {
+          transform: scale(1.1);
+        }
+        40% {
+          transform: scale(1.2);
+        }
+        60% {
+          transform: scale(1.3);
+        }
+        80% {
+          transform: scale(1.2);
+        }
+        80% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1);
+        }
       }
-      .btn {
-        background-color: white;
+      .icon {
+        font-size: 1.2rem;
+        background: #ff0000;
+        color: #fff;
+        padding: 0 5px;
+        vertical-align: top;
+        margin-left: -5px;
       }
     </style>
 
-    <title>Website</title>
+    <title>Endrajit</title>
   </head>
   <body>
     <header>
-      <!-- first navbar -->
-      <nav class="first-nav">
-        <img src="logo.png" alt="" height="70px" />
-        <i class="fa-solid fa-cart-shopping fa-2x p-3"></i>
-      </nav>
-      <!-- second navbar -->
-      <nav class="second-nav">
-        <div>
-          <a href="#" class="px-5">Order</a>
-          <a href="#" class="px-5">Review</a>
-          <a href="#" class="px-5">Contact</a>
+      <nav class="navbar sticky-top bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="logo" height="50" />
+          </a>
+          <i class="fa-solid fa-cart-shopping fa-2x p-3"
+            ><span class="badge bg-danger rounded-pill icon" id="total-count"
+              >0</span
+            ></i
+          >
         </div>
-        <div class="pe-3">
+      </nav>
+
+      <nav
+        class="navbar navbar-expand-sm navbar-light text-dark bg-warning p-1 fs-6 fw-bold"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link ps-1 pe-5" href="">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-1 pe-5" href="">Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-1 pe-5" href="">Contact</a>
+          </li>
+        </ul>
+        <div class="ms-auto">
           <i class="fa-solid fa-user"></i>
-          <span>Endrajit Saha</span>
+          <span class="pe-3"> Endrajit Saha</span>
         </div>
       </nav>
     </header>
-    <!-- body section -->
-    <main>
-      <div class="main pb-3">
-        <img src="banner-img.png" alt="" width="1000vw" />
-      </div>
 
-      <!-- order section -->
-      <div class="order-div">
-        <h2 class="text-center py-3 text-bolder">Order food</h2>
-      </div>
-      <section class="order">
-        <div>
-          <img src="biriyani_img.png" alt="" />
-          <span class="p-3">Chicken Biriyani</span>
-          <button class="btn">+</button>
-          <span class="p-3">1</span>
-          <button class="btn">-</button>
+    <!-- banner section -->
+    <img src="banner-img.png" alt="" class="img-fluid" />
+
+    <!-- Order section -->
+    <main style="background-color: papayawhip">
+      <h2 class="text-center p-5 fs-1 fw-bold">Order Food</h2>
+
+      <section style="background-color: brown">
+        <div class="container p-4 m-4">
+          <img src="biriyani_img.png" alt="" class="img-fluid" />
+          <span
+            class="d-inline-block p-4 m-auto text-white"
+            style="font-family: Courgette, cursive"
+            >Chicken Biriyani</span
+          >
+          <button class="btn btn btn-light text-bold inc-btn">+</button>
+          <span class="p-3 text-white">0</span>
+          <button class="btn btn btn-light text-bold dec-btn">-</button>
         </div>
         <hr />
-        <div>
-          <img src="firni_img.png" alt="" />
-          <span class="p-3">Firni</span>
-          <button class="btn">+</button>
-          <span class="p-3">0</span>
-          <button class="btn">-</button>
+        <div class="container p-4 m-4">
+          <img src="firni_img.png" alt="" class="img-fluid" />
+          <span
+            class="d-inline-block p-4 m-auto text-white"
+            style="font-family: Courgette, cursive"
+            >Firni</span
+          >
+          <button class="btn btn btn-light text-bold inc-btn">+</button>
+          <span class="p-3 text-white">0</span>
+          <button class="btn btn btn-light text-bold dec-btn">-</button>
         </div>
-        <hr />
-        <div>
-          <img src="curry_img.png" alt="" />
-          <span class="p-3">Chicken Curry</span>
-          <button class="btn">+</button>
-          <span class="p-3">0</span>
-          <button class="btn">-</button>
+        <div class="container p-4 m-4">
+          <img src="curry_img.png" alt="" class="img-fluid" />
+          <span
+            class="d-inline-block p-4 m-auto text-white"
+            style="font-family: Courgette, cursive"
+            >Chicken Curry</span
+          >
+          <button class="btn btn btn-light text-bold inc-btn">+</button>
+          <span class="p-3 text-white">0</span>
+          <button class="btn btn btn-light text-bold dec-btn">-</button>
         </div>
       </section>
 
-      <!-- review section -->
-      <section class="review p-3 text-center">
-        <h2 class="text-center py-3 text-bolder">Reviews</h2>
+      <!-- Review section -->
+
+      <h2 class="text-center p-5 fs-1 fw-bold">Reviews</h2>
+      <section class="text-center py-2">
         <div class="container">
           <div class="row">
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
           </div>
         </div>
@@ -156,23 +198,29 @@
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
           </div>
         </div>
@@ -181,23 +229,29 @@
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
             <div class="col bg-white p-2 rounded m-2">
               <img src="chicken_curry.png" alt="" />
               <p>Chicken Curry</p>
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i
+              ><i class="fa-regular fa-star rate"></i>
             </div>
           </div>
         </div>
@@ -206,9 +260,13 @@
 
     <footer class="bg-danger p-5 text-white">
       <h4>Contact US</h4>
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-facebook px-2"></i>
+      <i class="fa-brands fa-instagram px-2"></i>
+      <i class="fa-brands fa-youtube px-2"></i>
+
+      <p class="text-end pt-5" style="font-family: Courgette, cursive">
+        &copyDesinged by Endrajit,2022
+      </p>
     </footer>
 
     <script src="main.js"></script>
